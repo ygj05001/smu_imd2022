@@ -8,7 +8,7 @@ var a = 0;
 var sponge = [];
 
 function setup() {
-  createCanvas(700, 700, WEBGL);
+  createCanvas(1000, 1000, WEBGL);
   // as of p5.js 0.6.0, normal material is no longer the default and
   // has to be explicitly selected.
   normalMaterial();
