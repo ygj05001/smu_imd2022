@@ -6,7 +6,7 @@
 var yoff = 0;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(600, 600);
 }
 
 function draw() {
