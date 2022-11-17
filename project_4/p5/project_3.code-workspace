@@ -1,0 +1,16 @@
+{
+  "folders": [
+	{
+		"path": "../../../../Desktop/khg11_11/project_3"
+	},
+	{
+		"path": "../.."
+	},
+	{
+		"path": "../../../../Desktop/khg11_11"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "project_3"
+  }
+}
