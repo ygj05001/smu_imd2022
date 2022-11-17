@@ -12,11 +12,11 @@ function Asteroid(pos, r) {
   if (r) {
     this.r = r * 0.5;
   } else {
-    this.r = random(15, 50);
+    this.r = random(15, 100);
   }
 
   this.vel = p5.Vector.random2D();
-  this.total = floor(random(5, 15));
+  this.total = floor(random(5,15));
   this.offset = [];
   for (var i = 0; i < this.total; i++) {
     this.offset[i] = random(-this.r * 0.5, this.r * 0.5);

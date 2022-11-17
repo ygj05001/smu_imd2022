@@ -6,18 +6,18 @@
 function Laser(spos, angle) {
   this.pos = createVector(spos.x, spos.y);
   this.vel = p5.Vector.fromAngle(angle);
-  this.vel.mult(10);
+  this.vel.mult(7);
 
   this.update = function() {
     this.pos.add(this.vel);
   };
 
   this.render = function() {
-    push();
-    stroke(255);
-    strokeWeight(4);
+    push(0, 0, 255);
+    stroke(0, 0, 255);
+    strokeWeight(10);
     point(this.pos.x, this.pos.y);
-    pop();
+    pop(60);
   };
 
   this.hits = function(asteroid) {
