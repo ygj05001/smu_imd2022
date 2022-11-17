@@ -1,49 +1,73 @@
 // Daniel Shiffman
 // http://codingtra.in
 // http://patreon.com/codingtrain
-// Code for: https://youtu.be/bGz7mv2vD6g
+// Code for: https://youtu.be/hacZU523FyM
 
-var population;
-// Each rocket is alive till 400 frames
-var lifespan = 400;
-// Made to display count on screen
-var lifeP;
-// Keeps track of frames
-var count = 0;
-// Where rockets are trying to go
-var target;
-// Max force applied to rocket
-var maxforce = 0.2;
-
-// Dimensions of barrier
-var rx = 100;
-var ry = 150;
-var rw = 200;
-var rh = 10;
+var ship;
+var asteroids = [];
+var lasers = [];
 
 function setup() {
-  createCanvas(400, 300);
-  population = new Population();
-  lifeP = createP();
-  target = createVector(width / 2, 50);
+  createCanvas(windowWidth, windowHeight);
+  ship = new Ship();
+  for (var i = 0; i < 5; i++) {
+    asteroids.push(new Asteroid());
+  }
 }
 
 function draw() {
   background(0);
-  population.run();
-  // Displays count to window
-  lifeP.html(count);
 
-  count++;
-  if (count == lifespan) {
-    population.evaluate();
-    population.selection();
-    // Population = new Population();
-    count = 0;
+  for (var i = 0; i < asteroids.length; i++) {
+    if (ship.hits(asteroids[i])) {
+      console.log('ooops!');
+    }
+    asteroids[i].render();
+    asteroids[i].update();
+    asteroids[i].edges();
   }
-  // Renders barrier for rockets
-  fill(255);
-  rect(rx, ry, rw, rh);
-  // Renders target
-  ellipse(target.x, target.y, 16, 16);
+
+  for (var i = lasers.length - 1; i >= 0; i--) {
+    lasers[i].render();
+    lasers[i].update();
+    if (lasers[i].offscreen()) {
+      lasers.splice(i, 1);
+    } else {
+      for (var j = asteroids.length - 1; j >= 0; j--) {
+        if (lasers[i].hits(asteroids[j])) {
+          if (asteroids[j].r > 10) {
+            var newAsteroids = asteroids[j].breakup();
+            asteroids = asteroids.concat(newAsteroids);
+          }
+          asteroids.splice(j, 1);
+          lasers.splice(i, 1);
+          break;
+        }
+      }
+    }
+  }
+
+  console.log(lasers.length);
+
+  ship.render();
+  ship.turn();
+  ship.update();
+  ship.edges();
+}
+
+function keyReleased() {
+  ship.setRotation(0);
+  ship.boosting(false);
+}
+
+function keyPressed() {
+  if (key == ' ') {
+    lasers.push(new Laser(ship.pos, ship.heading));
+  } else if (keyCode == RIGHT_ARROW) {
+    ship.setRotation(0.1);
+  } else if (keyCode == LEFT_ARROW) {
+    ship.setRotation(-0.1);
+  } else if (keyCode == UP_ARROW) {
+    ship.boosting(true);
+  }
 }
