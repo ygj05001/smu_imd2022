@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: Pretendard;
+}
+
+.container {
+  padding-block: 3.5rem;
+  padding-inline: 1rem;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: stretch;
+  margin-inline: auto;
+  max-width: 60.25rem;
+  > * {
+    overflow: hidden;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto, repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.grid_title {
+  min-height: 1rem;
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 1;
+  h1 {
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+  p {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.0313rem;
+    margin-bottom: 0.25rem;
+  }
+  margin-bottom: 0.5rem;
+}
+
+.grid_item {
+  aspect-ratio: 1 / 1;
+  transition: background-image 0.2s ease-in-out;
+  background-size: cover;
+}
+
+@for $idx from 1 through 9 {
+  #grid_item_#{$idx} {
+    background-image: url(../../works/work#{$idx}/thumb.jpg);
+  }
+  #grid_item_#{$idx}:hover {
+    background-image: url(../../works/work#{$idx}/thumb_hover.jpg);
+  }
+}

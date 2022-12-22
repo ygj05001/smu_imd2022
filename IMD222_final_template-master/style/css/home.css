@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: Pretendard;
+}
+
+.container {
+  padding-block: 3.5rem;
+  padding-inline: 1rem;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: stretch;
+  margin-inline: auto;
+  max-width: 60.25rem;
+}
+.container > * {
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto, repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.grid_title {
+  min-height: 1rem;
+  grid-column: 1/span 3;
+  grid-row: 1/span 1;
+  margin-bottom: 0.5rem;
+}
+.grid_title h1 {
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+.grid_title p {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.0313rem;
+  margin-bottom: 0.25rem;
+}
+
+.grid_item {
+  aspect-ratio: 1/1;
+  transition: background-image 0.2s ease-in-out;
+  background-size: cover;
+}
+
+#grid_item_1 {
+  background-image: url(../../works/work1/thumb.jpg);
+}
+
+#grid_item_1:hover {
+  background-image: url(../../works/work1/thumb_hover.jpg);
+}
+
+#grid_item_2 {
+  background-image: url(../../works/work2/thumb.jpg);
+}
+
+#grid_item_2:hover {
+  background-image: url(../../works/work2/thumb_hover.jpg);
+}
+
+#grid_item_3 {
+  background-image: url(../../works/work3/thumb.jpg);
+}
+
+#grid_item_3:hover {
+  background-image: url(../../works/work3/thumb_hover.jpg);
+}
+
+#grid_item_4 {
+  background-image: url(../../works/work4/thumb.jpg);
+}
+
+#grid_item_4:hover {
+  background-image: url(../../works/work4/thumb_hover.jpg);
+}
+
+#grid_item_5 {
+  background-image: url(../../works/work5/thumb.jpg);
+}
+
+#grid_item_5:hover {
+  background-image: url(../../works/work5/thumb_hover.jpg);
+}
+
+#grid_item_6 {
+  background-image: url(../../works/work6/thumb.jpg);
+}
+
+#grid_item_6:hover {
+  background-image: url(../../works/work6/thumb_hover.jpg);
+}
+
+#grid_item_7 {
+  background-image: url(../../works/work7/thumb.jpg);
+}
+
+#grid_item_7:hover {
+  background-image: url(../../works/work7/thumb_hover.jpg);
+}
+
+#grid_item_8 {
+  background-image: url(../../works/work8/thumb.jpg);
+}
+
+#grid_item_8:hover {
+  background-image: url(../../works/work8/thumb_hover.jpg);
+}
+
+#grid_item_9 {
+  background-image: url(../../works/work9/thumb.jpg);
+}
+
+#grid_item_9:hover {
+  background-image: url(../../works/work9/thumb_hover.jpg);
+}
