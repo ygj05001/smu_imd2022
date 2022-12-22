@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "../.."
+	},
+	{
+		"path": "../../../../smu_imd2022"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "IMD222_final_template-master"
+  }
+}

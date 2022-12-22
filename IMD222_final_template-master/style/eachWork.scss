@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: Pretendard;
+}
+
+body {
+  // position: fixed;
+  // width: 100%;
+  overscroll-behavior-y: contain;
+}
+
+.container {
+  height: 100dvh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: stretch;
+  margin-inline: auto;
+  padding: 1rem;
+  max-width: 40rem;
+}
+
+#p5Canvas {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  canvas {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15),
+      0px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+}
